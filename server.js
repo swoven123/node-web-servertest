@@ -47,7 +47,8 @@ app.get('/', (req, res)=>{
 
 app.get('/about', (req, res)=>{
   res.render('about.hbs', {
-    pageTitle:'About Page'
+    pageTitle:'About Page',
+    message:'This is about page for test.'
   });
 });
 
@@ -56,6 +57,14 @@ app.get('/bad', (req, res)=>{
     errorMessage:'There was an error'
   });
 });
+
+app.get('/project',(req, res)=>{
+  res.render('project.hbs', {
+    pageTitle:'Project Page',
+    message:'This is just a test of node application'
+  });
+})
+
 app.listen(port, ()=>{
   console.log(`Server is up on port ${port}`);
 });
